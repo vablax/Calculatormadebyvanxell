@@ -114,14 +114,16 @@ button:active {
 }
 
 .equals {
-    background: linear-gradient(
-        135deg,
-        #ff1766,
-        #ff62a0
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff1766,
+            #ff62a0
+        );
 
     box-shadow:
-        0 0 25px rgba(255,30,100,.4);
+        0 0 25px
+        rgba(255,30,100,.4);
 }
 
 .clear {
@@ -130,11 +132,12 @@ button:active {
 
 
 /* =========================
-   TRANSITION
+   DRAMATIC FLASH
 ========================= */
 
 #flash {
     position: fixed;
+
     inset: 0;
 
     background: white;
@@ -147,10 +150,11 @@ button:active {
 }
 
 .flash {
-    animation: flash .8s ease;
+    animation:
+        flashAnimation .8s ease;
 }
 
-@keyframes flash {
+@keyframes flashAnimation {
 
     0% {
         opacity: 0;
@@ -179,6 +183,7 @@ button:active {
 ========================= */
 
 #songScreen {
+
     position: fixed;
 
     inset: 0;
@@ -191,7 +196,8 @@ button:active {
 
     transition:
         opacity 1.3s ease,
-        transform 1.3s cubic-bezier(.16,1,.3,1);
+        transform 1.3s
+        cubic-bezier(.16,1,.3,1);
 
     overflow: hidden;
 
@@ -215,6 +221,7 @@ button:active {
 }
 
 .song-active {
+
     opacity: 1 !important;
 
     transform: scale(1) !important;
@@ -224,10 +231,11 @@ button:active {
 
 
 /* =========================
-   BACKGROUND LIGHTS
+   MOVING LIGHTS
 ========================= */
 
 .light {
+
     position: absolute;
 
     width: 500px;
@@ -240,10 +248,12 @@ button:active {
     opacity: .2;
 
     animation:
-        floating 8s infinite alternate ease-in-out;
+        floating 8s infinite
+        alternate ease-in-out;
 }
 
 .light1 {
+
     background: #ff176d;
 
     top: -250px;
@@ -251,6 +261,7 @@ button:active {
 }
 
 .light2 {
+
     background: #6633ff;
 
     right: -200px;
@@ -276,10 +287,11 @@ button:active {
 
 
 /* =========================
-   ALBUM DISC
+   ALBUM
 ========================= */
 
 .album-container {
+
     position: relative;
 
     z-index: 3;
@@ -288,6 +300,7 @@ button:active {
 }
 
 .album {
+
     width: 180px;
     height: 180px;
 
@@ -373,6 +386,7 @@ button:active {
 ========================= */
 
 .title {
+
     position: relative;
 
     z-index: 3;
@@ -380,11 +394,15 @@ button:active {
     margin-top: 20px;
 
     text-shadow:
-        0 0 10px rgba(255,50,120,.8),
-        0 0 30px rgba(255,30,100,.4);
+        0 0 10px
+        rgba(255,50,120,.8),
+
+        0 0 30px
+        rgba(255,30,100,.4);
 }
 
 .title h1 {
+
     font-size:
         clamp(26px,7vw,42px);
 
@@ -392,6 +410,7 @@ button:active {
 }
 
 .title p {
+
     margin-top: 6px;
 
     color: #aaa;
@@ -453,6 +472,7 @@ button:active {
 @keyframes lyricAppear {
 
     0% {
+
         opacity: 0;
 
         transform:
@@ -463,6 +483,7 @@ button:active {
     }
 
     100% {
+
         opacity: 1;
 
         transform:
@@ -491,6 +512,7 @@ button:active {
 }
 
 audio {
+
     width: 100%;
 }
 
@@ -512,7 +534,8 @@ audio {
 
     margin-top: 10px;
 
-    background: rgba(255,255,255,.15);
+    background:
+        rgba(255,255,255,.15);
 
     border-radius: 10px;
 
@@ -570,7 +593,7 @@ audio {
 
 
 /* =========================
-   HEART PARTICLES
+   FLOATING HEARTS
 ========================= */
 
 .heart {
@@ -592,6 +615,7 @@ audio {
 @keyframes heartFloat {
 
     0% {
+
         opacity: 0;
 
         transform:
@@ -604,6 +628,7 @@ audio {
     }
 
     100% {
+
         opacity: 0;
 
         transform:
@@ -616,6 +641,9 @@ audio {
 
 
 <body>
+
+
+<!-- FLASH EFFECT -->
 
 <div id="flash"></div>
 
@@ -635,56 +663,103 @@ audio {
 
 <div class="buttons">
 
+
 <button
     class="clear"
     onclick="clearDisplay()">
+
     C
+
 </button>
 
-<button onclick="add('7')">7</button>
-<button onclick="add('8')">8</button>
-<button onclick="add('9')">9</button>
+
+<button onclick="add('7')">
+    7
+</button>
+
+<button onclick="add('8')">
+    8
+</button>
+
+<button onclick="add('9')">
+    9
+</button>
 
 <button
     class="operator"
     onclick="add('÷')">
+
     ÷
+
 </button>
 
-<button onclick="add('4')">4</button>
-<button onclick="add('5')">5</button>
-<button onclick="add('6')">6</button>
+
+<button onclick="add('4')">
+    4
+</button>
+
+<button onclick="add('5')">
+    5
+</button>
+
+<button onclick="add('6')">
+    6
+</button>
 
 <button
     class="operator"
     onclick="add('×')">
+
     ×
+
 </button>
 
-<button onclick="add('1')">1</button>
-<button onclick="add('2')">2</button>
-<button onclick="add('3')">3</button>
+
+<button onclick="add('1')">
+    1
+</button>
+
+<button onclick="add('2')">
+    2
+</button>
+
+<button onclick="add('3')">
+    3
+</button>
 
 <button
     class="operator"
     onclick="add('-')">
+
     −
+
 </button>
 
-<button onclick="add('0')">0</button>
-<button onclick="add('.')">.</button>
+
+<button onclick="add('0')">
+    0
+</button>
+
+<button onclick="add('.')">
+    .
+</button>
 
 <button
     class="operator"
     onclick="add('+')">
+
     +
+
 </button>
 
 <button
     class="equals"
     onclick="calculate()">
+
     =
+
 </button>
+
 
 </div>
 
@@ -699,12 +774,15 @@ audio {
 
 <div id="songScreen">
 
+
 <div class="light light1"></div>
 <div class="light light2"></div>
 
 
 <div class="album-container">
-    <div class="album"></div>
+
+<div class="album"></div>
+
 </div>
 
 
@@ -726,6 +804,8 @@ Boyz II Men
 </div>
 
 
+<!-- YOUR EXACT MP3 FILE -->
+
 <div class="audio-container">
 
 <audio
@@ -734,9 +814,11 @@ Boyz II Men
 >
 
 <source
-    src="bended_knee.mp3"
+    src="Boys_To_Men_-_ON_BENDED_KNEE_(mp3.pm).mp3"
     type="audio/mpeg"
 >
+
+Your browser does not support audio.
 
 </audio>
 
@@ -760,6 +842,7 @@ Boyz II Men
 ← Calculator
 
 </button>
+
 
 </div>
 
@@ -807,7 +890,7 @@ const progressBar =
 
 
 /* =========================
-   LYRICS DATA
+   LYRICS
 ========================= */
 
 let lyrics = [];
@@ -822,12 +905,14 @@ let currentLyric = -1;
 function add(value) {
 
     display.value += value;
+
 }
 
 
 function clearDisplay() {
 
     display.value = "";
+
 }
 
 
@@ -838,7 +923,9 @@ function calculate() {
 
 
     /*
-       SECRET TRIGGER
+       SECRET COMBINATION:
+
+       67 × 67
     */
 
     if (
@@ -855,14 +942,27 @@ function calculate() {
 
         const math =
             expression
-                .replace(/×/g,"*")
-                .replace(/÷/g,"/")
-                .replace(/−/g,"-");
+
+                .replace(
+                    /×/g,
+                    "*"
+                )
+
+                .replace(
+                    /÷/g,
+                    "/"
+                )
+
+                .replace(
+                    /−/g,
+                    "-"
+                );
 
 
         const result =
             Function(
-                '"use strict";return (' +
+                '"use strict";' +
+                'return (' +
                 math +
                 ')'
             )();
@@ -877,6 +977,7 @@ function calculate() {
 
         display.value =
             "Error";
+
     }
 }
 
@@ -887,9 +988,8 @@ function calculate() {
 
 function activateSong() {
 
-    /*
-       FLASH
-    */
+
+    /* FLASH */
 
     flash.classList.remove(
         "flash"
@@ -902,18 +1002,14 @@ function activateSong() {
     );
 
 
-    /*
-       ZOOM CALCULATOR
-    */
+    /* CALCULATOR ZOOM */
 
     calculator.classList.add(
         "calculator-exit"
     );
 
 
-    /*
-       OPEN SONG SCREEN
-    */
+    /* SHOW SONG */
 
     setTimeout(() => {
 
@@ -931,16 +1027,10 @@ function activateSong() {
         song.currentTime = 0;
 
 
-        /*
-           User clicked "=",
-           so browser usually allows
-           playback here.
-        */
-
         song.play().catch(() => {
 
             console.log(
-                "Press play to start."
+                "Press play if autoplay was blocked."
             );
 
         });
@@ -950,7 +1040,7 @@ function activateSong() {
 
 
 /* =========================
-   LOAD LYRICS
+   LOAD SYNCHRONIZED LYRICS
 ========================= */
 
 async function loadLyrics() {
@@ -966,8 +1056,9 @@ async function loadLyrics() {
         if (!response.ok) {
 
             throw new Error(
-                "lyrics.json missing"
+                "lyrics.json not found"
             );
+
         }
 
 
@@ -988,17 +1079,20 @@ async function loadLyrics() {
 
         lyricsElement.textContent =
             "Add your authorized lyrics to lyrics.json ❤️";
+
     }
 }
 
 
 /* =========================
-   SYNCHRONIZE LYRICS
+   SYNC LYRICS TO AUDIO
 ========================= */
 
 function updateLyric() {
 
-    if (!lyrics.length) {
+    if (
+        lyrics.length === 0
+    ) {
         return;
     }
 
@@ -1017,24 +1111,26 @@ function updateLyric() {
     ) {
 
         if (
-            time >= lyrics[i].start &&
-            time < lyrics[i].end
+            time >=
+                lyrics[i].start
+            &&
+            time <
+                lyrics[i].end
         ) {
 
             newIndex = i;
 
             break;
         }
+
     }
 
 
-    /*
-       Only animate when the
-       lyric actually changes.
-    */
+    /* ONLY CHANGE WHEN LYRIC CHANGES */
 
     if (
-        newIndex !== currentLyric
+        newIndex !==
+        currentLyric
     ) {
 
         currentLyric =
@@ -1057,7 +1153,9 @@ function updateLyric() {
 
 
             lyricsElement.textContent =
-                lyrics[newIndex].text;
+                lyrics[
+                    newIndex
+                ].text;
 
 
             lyricsElement
@@ -1072,21 +1170,29 @@ function updateLyric() {
 
             lyricsElement.textContent =
                 "";
+
         }
+
     }
+
 }
 
 
 /* =========================
-   AUDIO EVENTS
+   AUDIO TIME UPDATE
 ========================= */
 
 song.addEventListener(
     "timeupdate",
     () => {
 
+
+        /* SYNCHRONIZE LYRICS */
+
         updateLyric();
 
+
+        /* PROGRESS BAR */
 
         if (
             song.duration
@@ -1101,38 +1207,46 @@ song.addEventListener(
 
             progressBar.style.width =
                 percent + "%";
+
         }
 
     }
 );
 
 
-/*
-   When user seeks through
-   the song, lyrics immediately
-   follow the new position.
-*/
+/* =========================
+   SEEK SUPPORT
+========================= */
 
 song.addEventListener(
     "seeked",
-    updateLyric
+    () => {
+
+        updateLyric();
+
+    }
 );
 
 
 /* =========================
-   HEARTS
+   HEART PARTICLES
 ========================= */
 
-let heartsStarted = false;
+let heartsStarted =
+    false;
 
 
 function createHearts() {
 
-    if (heartsStarted) {
+    if (
+        heartsStarted
+    ) {
         return;
     }
 
-    heartsStarted = true;
+
+    heartsStarted =
+        true;
 
 
     setInterval(() => {
@@ -1149,8 +1263,8 @@ function createHearts() {
 
         heart.textContent =
             Math.random() > .5
-            ? "❤️"
-            : "♡";
+                ? "❤️"
+                : "♡";
 
 
         heart.style.left =
@@ -1177,18 +1291,22 @@ function createHearts() {
         },4000);
 
     },500);
+
 }
 
 
 /* =========================
-   BACK
+   BACK TO CALCULATOR
 ========================= */
 
 function goBack() {
 
+
     song.pause();
 
-    song.currentTime = 0;
+
+    song.currentTime =
+        0;
 
 
     songScreen.classList.remove(
@@ -1201,24 +1319,28 @@ function goBack() {
     );
 
 
-    display.value = "";
+    display.value =
+        "";
 
 
-    currentLyric = -1;
+    currentLyric =
+        -1;
 
 
     lyricsElement.textContent =
         "❤️";
+
 }
 
 
 /* =========================
-   KEYBOARD
+   KEYBOARD SUPPORT
 ========================= */
 
 document.addEventListener(
     "keydown",
     event => {
+
 
         if (
             event.key >= "0" &&
@@ -1226,26 +1348,43 @@ document.addEventListener(
         ) {
 
             add(event.key);
+
         }
 
 
-        if (event.key === "*") {
+        if (
+            event.key === "*"
+        ) {
+
             add("×");
+
         }
 
 
-        if (event.key === "/") {
+        if (
+            event.key === "/"
+        ) {
+
             add("÷");
+
         }
 
 
-        if (event.key === "+") {
+        if (
+            event.key === "+"
+        ) {
+
             add("+");
+
         }
 
 
-        if (event.key === "-") {
+        if (
+            event.key === "-"
+        ) {
+
             add("-");
+
         }
 
 
@@ -1254,6 +1393,7 @@ document.addEventListener(
         ) {
 
             calculate();
+
         }
 
 
@@ -1262,6 +1402,7 @@ document.addEventListener(
         ) {
 
             clearDisplay();
+
         }
 
     }
