@@ -2,51 +2,331 @@
   {
     "start": 0.0,
     "end": 4.0,
-    "text": "I am begging you, begging you, come back to me"
+    "text": "Darlin' I, I can't explain"
   },
   {
     "start": 4.0,
     "end": 8.0,
-    "text": "YOUR LYRIC"
+    "text": "Where did we lose our way?"
   },
   {
     "start": 8.0,
     "end": 12.0,
-    "text": "YOUR LYRIC"
+    "text": "Girl it's drivin' me insane"
   },
   {
     "start": 12.0,
     "end": 16.0,
-    "text": "YOUR LYRIC"
+    "text": "And I know I just need one more chance"
   },
   {
     "start": 16.0,
     "end": 20.0,
-    "text": "YOUR LYRIC"
+    "text": "To prove my love to you"
   },
   {
     "start": 20.0,
     "end": 24.0,
-    "text": "YOUR LYRIC"
+    "text": "And if you come back to me"
   },
   {
     "start": 24.0,
     "end": 28.0,
-    "text": "YOUR LYRIC"
+    "text": "I'll guarantee"
   },
   {
     "start": 28.0,
     "end": 32.0,
-    "text": "YOUR LYRIC"
+    "text": "That I'll never let you go"
   },
   {
     "start": 32.0,
     "end": 36.0,
-    "text": "YOUR LYRIC"
+    "text": "Can we go back to the days our love was strong?"
   },
   {
     "start": 36.0,
     "end": 40.0,
-    "text": "YOUR LYRIC"
+    "text": "Can you tell me how a perfect love goes wrong?"
+  },
+  {
+    "start": 40.0,
+    "end": 44.0,
+    "text": "Can somebody tell me how to get things back"
+  },
+  {
+    "start": 44.0,
+    "end": 48.0,
+    "text": "The way they use to be?"
+  },
+  {
+    "start": 48.0,
+    "end": 52.0,
+    "text": "Oh God give me a reason"
+  },
+  {
+    "start": 52.0,
+    "end": 56.0,
+    "text": "I'm down on bended knee"
+  },
+  {
+    "start": 56.0,
+    "end": 60.0,
+    "text": "I'll never walk again until you come back to me"
+  },
+  {
+    "start": 60.0,
+    "end": 64.0,
+    "text": "I'm down on bended knee"
+  },
+  {
+    "start": 64.0,
+    "end": 68.0,
+    "text": "So many nights I dream of you"
+  },
+  {
+    "start": 68.0,
+    "end": 72.0,
+    "text": "Holding my pillow tight"
+  },
+  {
+    "start": 72.0,
+    "end": 76.0,
+    "text": "And I know I don't need to be alone, yeah"
+  },
+  {
+    "start": 76.0,
+    "end": 80.0,
+    "text": "When I open up my eyes"
+  },
+  {
+    "start": 80.0,
+    "end": 84.0,
+    "text": "To face reality"
+  },
+  {
+    "start": 84.0,
+    "end": 88.0,
+    "text": "Every moment without you"
+  },
+  {
+    "start": 88.0,
+    "end": 92.0,
+    "text": "It seems like eternity"
+  },
+  {
+    "start": 92.0,
+    "end": 96.0,
+    "text": "I'm begging you, begging you come back to me"
+  },
+  {
+    "start": 96.0,
+    "end": 100.0,
+    "text": "Can we go back to the days our love was strong?"
+  },
+  {
+    "start": 100.0,
+    "end": 104.0,
+    "text": "Can you tell me how a perfect love goes wrong?"
+  },
+  {
+    "start": 104.0,
+    "end": 108.0,
+    "text": "Can somebody tell me how to get things back"
+  },
+  {
+    "start": 108.0,
+    "end": 112.0,
+    "text": "The way they use to be?"
+  },
+  {
+    "start": 112.0,
+    "end": 116.0,
+    "text": "Oh God give me a reason"
+  },
+  {
+    "start": 116.0,
+    "end": 120.0,
+    "text": "I'm down on bended knee"
+  },
+  {
+    "start": 120.0,
+    "end": 124.0,
+    "text": "I'll never walk again until you come back to me"
+  },
+  {
+    "start": 124.0,
+    "end": 128.0,
+    "text": "I'm down on bended knee"
+  },
+  {
+    "start": 128.0,
+    "end": 132.0,
+    "text": "Baby, I'm sorry"
+  },
+  {
+    "start": 132.0,
+    "end": 136.0,
+    "text": "Please forgive me for all the wrong I've done"
+  },
+  {
+    "start": 136.0,
+    "end": 140.0,
+    "text": "Please come back home, girl"
+  },
+  {
+    "start": 140.0,
+    "end": 144.0,
+    "text": "I know you put all your trust in me"
+  },
+  {
+    "start": 144.0,
+    "end": 148.0,
+    "text": "I'm sorry I let you down"
+  },
+  {
+    "start": 148.0,
+    "end": 152.0,
+    "text": "Please forgive me"
+  },
+  {
+    "start": 152.0,
+    "end": 156.0,
+    "text": "I'm Gonna swallow my pride"
+  },
+  {
+    "start": 156.0,
+    "end": 160.0,
+    "text": "Say I'm sorry"
+  },
+  {
+    "start": 160.0,
+    "end": 164.0,
+    "text": "Stop pointing fingers the blame is on me"
+  },
+  {
+    "start": 164.0,
+    "end": 168.0,
+    "text": "I want a new life"
+  },
+  {
+    "start": 168.0,
+    "end": 172.0,
+    "text": "And I want it with you"
+  },
+  {
+    "start": 172.0,
+    "end": 176.0,
+    "text": "If you feel the same"
+  },
+  {
+    "start": 176.0,
+    "end": 180.0,
+    "text": "Don't ever let it go"
+  },
+  {
+    "start": 180.0,
+    "end": 184.0,
+    "text": "You gotta believe in the spirit of love"
+  },
+  {
+    "start": 184.0,
+    "end": 188.0,
+    "text": "It'll heal all things"
+  },
+  {
+    "start": 188.0,
+    "end": 192.0,
+    "text": "It won't hurt anymore"
+  },
+  {
+    "start": 192.0,
+    "end": 196.0,
+    "text": "No I don't believe our love's terminal"
+  },
+  {
+    "start": 196.0,
+    "end": 200.0,
+    "text": "I'm down on my knees begging you please come home"
+  },
+  {
+    "start": 200.0,
+    "end": 204.0,
+    "text": "Can we go back to the days our love was strong?"
+  },
+  {
+    "start": 204.0,
+    "end": 208.0,
+    "text": "Can you tell me how a perfect love goes wrong?"
+  },
+  {
+    "start": 208.0,
+    "end": 212.0,
+    "text": "Can somebody tell me how to get things back"
+  },
+  {
+    "start": 212.0,
+    "end": 216.0,
+    "text": "The way they used to be?"
+  },
+  {
+    "start": 216.0,
+    "end": 220.0,
+    "text": "Oh God give me a reason"
+  },
+  {
+    "start": 220.0,
+    "end": 224.0,
+    "text": "I'm down on bended"
+  },
+  {
+    "start": 224.0,
+    "end": 228.0,
+    "text": "Down on bended knee"
+  },
+  {
+    "start": 228.0,
+    "end": 232.0,
+    "text": "Can we go back to the days our love was strong?"
+  },
+  {
+    "start": 232.0,
+    "end": 236.0,
+    "text": "Can you tell me how a perfect love goes wrong?"
+  },
+  {
+    "start": 236.0,
+    "end": 240.0,
+    "text": "Can somebody tell me how to get things back"
+  },
+  {
+    "start": 240.0,
+    "end": 244.0,
+    "text": "The way they use to be?"
+  },
+  {
+    "start": 244.0,
+    "end": 248.0,
+    "text": "Oh God give me a reason"
+  },
+  {
+    "start": 248.0,
+    "end": 252.0,
+    "text": "I'm down on bended knee"
+  },
+  {
+    "start": 252.0,
+    "end": 256.0,
+    "text": "I'll never walk again"
+  },
+  {
+    "start": 256.0,
+    "end": 260.0,
+    "text": "Till you come back to me"
+  },
+  {
+    "start": 260.0,
+    "end": 264.0,
+    "text": "I'm down on bended knees"
   }
 ]
