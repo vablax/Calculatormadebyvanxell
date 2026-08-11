@@ -4,253 +4,1268 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Calculator ❤️</title>
+<title>67 × 67 ❤️</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background: #050505;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+#calculator {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        opacity 1s ease,
+        transform 1.2s cubic-bezier(.7,-.4,.2,1);
+}
+
+.calculator-box {
+    width: min(360px, 92vw);
+    padding: 20px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.7),
+        0 0 40px rgba(255,40,100,.15);
+}
+
+#display {
+    width: 100%;
+    height: 85px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 18px;
+
+    background: #151515;
+
+    color: white;
+
+    font-size: 32px;
+
+    text-align: right;
+
+    padding: 15px;
+}
+
+.buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+button {
+    height: 65px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #292929;
+
+    color: white;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .15s;
+}
+
+button:active {
+    transform: scale(.88);
+}
+
+.operator {
+    background: #3d2730;
+    color: #ff6b9a;
+}
+
+.equals {
+    background: linear-gradient(
+        135deg,
+        #ff1766,
+        #ff62a0
+    );
+
+    box-shadow:
+        0 0 25px rgba(255,30,100,.4);
+}
+
+.clear {
+    grid-column: span 4;
+}
+
+
+/* =========================
+   TRANSITION
+========================= */
+
+#flash {
+    position: fixed;
+    inset: 0;
+
+    background: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+.flash {
+    animation: flash .8s ease;
+}
+
+@keyframes flash {
+
+    0% {
+        opacity: 0;
     }
 
-    body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: #111;
+    30% {
+        opacity: 1;
     }
 
-    .calculator {
-        width: 330px;
-        padding: 20px;
-        border-radius: 25px;
-        background: #1e1e1e;
-        box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    100% {
+        opacity: 0;
+    }
+}
+
+.calculator-exit {
+    opacity: 0;
+
+    transform:
+        scale(3)
+        rotate(5deg);
+}
+
+
+/* =========================
+   SONG SCREEN
+========================= */
+
+#songScreen {
+    position: fixed;
+
+    inset: 0;
+
+    opacity: 0;
+
+    transform: scale(.7);
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.3s ease,
+        transform 1.3s cubic-bezier(.16,1,.3,1);
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255,30,100,.35),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(80,30,255,.2),
+            transparent 35%
+        ),
+
+        #050505;
+}
+
+.song-active {
+    opacity: 1 !important;
+
+    transform: scale(1) !important;
+
+    pointer-events: auto !important;
+}
+
+
+/* =========================
+   BACKGROUND LIGHTS
+========================= */
+
+.light {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    filter: blur(120px);
+
+    opacity: .2;
+
+    animation:
+        floating 8s infinite alternate ease-in-out;
+}
+
+.light1 {
+    background: #ff176d;
+
+    top: -250px;
+    left: -150px;
+}
+
+.light2 {
+    background: #6633ff;
+
+    right: -200px;
+    bottom: -250px;
+
+    animation-delay: -3s;
+}
+
+@keyframes floating {
+
+    from {
+        transform:
+            translate(0,0)
+            scale(1);
     }
 
-    #display {
-        width: 100%;
-        height: 80px;
-        border: none;
-        outline: none;
-        border-radius: 15px;
-        background: #292929;
-        color: white;
-        font-size: 32px;
-        text-align: right;
-        padding: 15px;
-        margin-bottom: 15px;
+    to {
+        transform:
+            translate(100px,70px)
+            scale(1.3);
+    }
+}
+
+
+/* =========================
+   ALBUM DISC
+========================= */
+
+.album-container {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 45px;
+}
+
+.album {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #111 0 7%,
+            #444 8% 9%,
+            #111 10% 18%,
+            #333 19% 20%,
+            #111 21% 100%
+        );
+
+    border:
+        4px solid
+        rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 0 30px
+        rgba(255,40,110,.5),
+
+        0 0 80px
+        rgba(255,40,110,.2);
+
+    animation:
+        spin 5s linear infinite;
+}
+
+.album::after {
+
+    content: "❤️";
+
+    position: absolute;
+
+    width: 65px;
+    height: 65px;
+
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff1766,
+            #ff79aa
+        );
+
+    font-size: 27px;
+
+    box-shadow:
+        0 0 30px
+        rgba(255,40,100,.8);
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
     }
 
-    .buttons {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 20px;
+
+    text-shadow:
+        0 0 10px rgba(255,50,120,.8),
+        0 0 30px rgba(255,30,100,.4);
+}
+
+.title h1 {
+    font-size:
+        clamp(26px,7vw,42px);
+
+    letter-spacing: 3px;
+}
+
+.title p {
+    margin-top: 6px;
+
+    color: #aaa;
+}
+
+
+/* =========================
+   SYNCHRONIZED LYRICS
+========================= */
+
+#lyrics {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(700px,90vw);
+
+    height: 150px;
+
+    margin:
+        25px auto 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    font-size:
+        clamp(20px,5vw,30px);
+
+    font-weight: bold;
+
+    line-height: 1.5;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(255,255,255,.8),
+
+        0 0 30px
+        rgba(255,30,100,.7);
+
+    transition:
+        opacity .25s,
+        transform .25s;
+}
+
+.lyric-animation {
+
+    animation:
+        lyricAppear .55s
+        cubic-bezier(.16,1,.3,1);
+}
+
+@keyframes lyricAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(.85);
+
+        filter: blur(8px);
     }
 
-    button {
-        height: 65px;
-        border: none;
-        border-radius: 15px;
-        background: #333;
-        color: white;
-        font-size: 22px;
-        cursor: pointer;
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter: blur(0);
+    }
+}
+
+
+/* =========================
+   AUDIO
+========================= */
+
+.audio-container {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(500px,90vw);
+
+    margin: 5px auto;
+}
+
+audio {
+    width: 100%;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        min(500px,90vw);
+
+    height: 4px;
+
+    margin-top: 10px;
+
+    background: rgba(255,255,255,.15);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+.progress-bar {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff1766,
+            #ff82ad
+        );
+
+    box-shadow:
+        0 0 10px #ff1766;
+
+    transition:
+        width .1s linear;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+#back {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 20px;
+
+    height: 45px;
+
+    padding: 0 25px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,.15);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   HEART PARTICLES
+========================= */
+
+.heart {
+
+    position: absolute;
+
+    bottom: -30px;
+
+    color: #ff3c79;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+    animation:
+        heartFloat 4s linear forwards;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(.5);
     }
 
-    button:active {
-        transform: scale(.95);
+    15% {
+        opacity: 1;
     }
 
-    .operator {
-        background: #555;
-    }
+    100% {
+        opacity: 0;
 
-    .equals {
-        background: #e91e63;
+        transform:
+            translateY(-500px)
+            scale(1.5);
     }
-
-    .clear {
-        grid-column: span 4;
-        background: #444;
-    }
-
-    /* SONG SCREEN */
-
-    #songScreen {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: #080808;
-        color: white;
-        text-align: center;
-        padding: 30px;
-        overflow-y: auto;
-    }
-
-    #songScreen h1 {
-        margin-top: 60px;
-        font-size: 32px;
-    }
-
-    #songScreen h2 {
-        color: #aaa;
-        font-weight: normal;
-    }
-
-    #lyrics {
-        max-width: 600px;
-        margin: 40px auto;
-        font-size: 22px;
-        line-height: 1.8;
-        white-space: pre-wrap;
-    }
-
-    #back {
-        padding: 12px 25px;
-        background: #e91e63;
-        border-radius: 10px;
-        font-size: 16px;
-    }
+}
 </style>
 </head>
 
+
 <body>
 
-<div class="calculator" id="calculator">
+<div id="flash"></div>
 
-    <input id="display" readonly>
 
-    <div class="buttons">
+<!-- =========================
+     CALCULATOR
+========================= -->
 
-        <button onclick="clearDisplay()" class="clear">C</button>
+<div id="calculator">
 
-        <button onclick="add('7')">7</button>
-        <button onclick="add('8')">8</button>
-        <button onclick="add('9')">9</button>
-        <button onclick="add('÷')" class="operator">÷</button>
+<div class="calculator-box">
 
-        <button onclick="add('4')">4</button>
-        <button onclick="add('5')">5</button>
-        <button onclick="add('6')">6</button>
-        <button onclick="add('×')" class="operator">×</button>
+<input
+    id="display"
+    readonly
+>
 
-        <button onclick="add('1')">1</button>
-        <button onclick="add('2')">2</button>
-        <button onclick="add('3')">3</button>
-        <button onclick="add('-')" class="operator">−</button>
+<div class="buttons">
 
-        <button onclick="add('0')">0</button>
-        <button onclick="add('.')">.</button>
-        <button onclick="add('+')" class="operator">+</button>
-        <button onclick="calculate()" class="equals">=</button>
+<button
+    class="clear"
+    onclick="clearDisplay()">
+    C
+</button>
 
-    </div>
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+
+<button
+    class="operator"
+    onclick="add('÷')">
+    ÷
+</button>
+
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+
+<button
+    class="operator"
+    onclick="add('×')">
+    ×
+</button>
+
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+
+<button
+    class="operator"
+    onclick="add('-')">
+    −
+</button>
+
+<button onclick="add('0')">0</button>
+<button onclick="add('.')">.</button>
+
+<button
+    class="operator"
+    onclick="add('+')">
+    +
+</button>
+
+<button
+    class="equals"
+    onclick="calculate()">
+    =
+</button>
+
+</div>
+
+</div>
+
 </div>
 
 
-<!-- SECRET SONG SCREEN -->
+<!-- =========================
+     SONG EXPERIENCE
+========================= -->
 
 <div id="songScreen">
 
-    <h1>❤️ On Bended Knee</h1>
-    <h2>Boyz II Men</h2>
+<div class="light light1"></div>
+<div class="light light2"></div>
 
-    <audio id="song" controls>
-        <source src="bended_knee.mp3" type="audio/mpeg">
-    </audio>
 
-    <div id="lyrics">
-        Put your authorized lyrics here.
-    </div>
+<div class="album-container">
+    <div class="album"></div>
+</div>
 
-    <button id="back" onclick="goBack()">← Calculator</button>
+
+<div class="title">
+
+<h1>
+ON BENDED KNEE
+</h1>
+
+<p>
+Boyz II Men
+</p>
+
+</div>
+
+
+<div id="lyrics">
+❤️
+</div>
+
+
+<div class="audio-container">
+
+<audio
+    id="song"
+    controls
+>
+
+<source
+    src="bended_knee.mp3"
+    type="audio/mpeg"
+>
+
+</audio>
+
+</div>
+
+
+<div class="progress">
+
+<div
+    class="progress-bar"
+    id="progressBar">
+</div>
+
+</div>
+
+
+<button
+    id="back"
+    onclick="goBack()">
+
+← Calculator
+
+</button>
 
 </div>
 
 
 <script>
 
-let display = document.getElementById("display");
+/* =========================
+   ELEMENTS
+========================= */
+
+const display =
+    document.getElementById(
+        "display"
+    );
+
+const calculator =
+    document.getElementById(
+        "calculator"
+    );
+
+const songScreen =
+    document.getElementById(
+        "songScreen"
+    );
+
+const song =
+    document.getElementById(
+        "song"
+    );
+
+const lyricsElement =
+    document.getElementById(
+        "lyrics"
+    );
+
+const flash =
+    document.getElementById(
+        "flash"
+    );
+
+const progressBar =
+    document.getElementById(
+        "progressBar"
+    );
+
+
+/* =========================
+   LYRICS DATA
+========================= */
+
+let lyrics = [];
+
+let currentLyric = -1;
+
+
+/* =========================
+   CALCULATOR
+========================= */
 
 function add(value) {
+
     display.value += value;
 }
 
+
 function clearDisplay() {
+
     display.value = "";
 }
 
+
 function calculate() {
 
-    let expression = display.value;
+    const expression =
+        display.value;
 
-    // SECRET EASTER EGG
-    if (expression === "67×67") {
 
-        document.getElementById("calculator").style.display = "none";
-        document.getElementById("songScreen").style.display = "block";
+    /*
+       SECRET TRIGGER
+    */
 
-        let song = document.getElementById("song");
+    if (
+        expression === "67×67"
+    ) {
 
-        song.currentTime = 0;
-
-        // Browser may require a user interaction.
-        song.play().catch(() => {
-            console.log("Press play to start the song.");
-        });
-
-        loadLyrics();
+        activateSong();
 
         return;
     }
 
+
     try {
 
-        let math = expression
-            .replace(/×/g, "*")
-            .replace(/÷/g, "/")
-            .replace(/−/g, "-");
+        const math =
+            expression
+                .replace(/×/g,"*")
+                .replace(/÷/g,"/")
+                .replace(/−/g,"-");
 
-        let result = Function(
-            '"use strict"; return (' + math + ')'
-        )();
 
-        display.value = result;
+        const result =
+            Function(
+                '"use strict";return (' +
+                math +
+                ')'
+            )();
 
-    } catch {
-        display.value = "Error";
+
+        display.value =
+            result;
+
+    }
+
+    catch {
+
+        display.value =
+            "Error";
     }
 }
 
 
-function loadLyrics() {
+/* =========================
+   START SONG
+========================= */
 
-    fetch("lyrics.txt")
-        .then(response => response.text())
-        .then(text => {
-            document.getElementById("lyrics").textContent = text;
-        })
-        .catch(() => {
-            document.getElementById("lyrics").textContent =
-                "Lyrics file not found.";
+function activateSong() {
+
+    /*
+       FLASH
+    */
+
+    flash.classList.remove(
+        "flash"
+    );
+
+    void flash.offsetWidth;
+
+    flash.classList.add(
+        "flash"
+    );
+
+
+    /*
+       ZOOM CALCULATOR
+    */
+
+    calculator.classList.add(
+        "calculator-exit"
+    );
+
+
+    /*
+       OPEN SONG SCREEN
+    */
+
+    setTimeout(() => {
+
+        songScreen.classList.add(
+            "song-active"
+        );
+
+
+        createHearts();
+
+
+        loadLyrics();
+
+
+        song.currentTime = 0;
+
+
+        /*
+           User clicked "=",
+           so browser usually allows
+           playback here.
+        */
+
+        song.play().catch(() => {
+
+            console.log(
+                "Press play to start."
+            );
+
         });
+
+    },500);
 }
 
+
+/* =========================
+   LOAD LYRICS
+========================= */
+
+async function loadLyrics() {
+
+    try {
+
+        const response =
+            await fetch(
+                "lyrics.json"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "lyrics.json missing"
+            );
+        }
+
+
+        lyrics =
+            await response.json();
+
+
+        currentLyric = -1;
+
+
+        updateLyric();
+
+    }
+
+    catch(error) {
+
+        console.error(error);
+
+        lyricsElement.textContent =
+            "Add your authorized lyrics to lyrics.json ❤️";
+    }
+}
+
+
+/* =========================
+   SYNCHRONIZE LYRICS
+========================= */
+
+function updateLyric() {
+
+    if (!lyrics.length) {
+        return;
+    }
+
+
+    const time =
+        song.currentTime;
+
+
+    let newIndex = -1;
+
+
+    for (
+        let i = 0;
+        i < lyrics.length;
+        i++
+    ) {
+
+        if (
+            time >= lyrics[i].start &&
+            time < lyrics[i].end
+        ) {
+
+            newIndex = i;
+
+            break;
+        }
+    }
+
+
+    /*
+       Only animate when the
+       lyric actually changes.
+    */
+
+    if (
+        newIndex !== currentLyric
+    ) {
+
+        currentLyric =
+            newIndex;
+
+
+        if (
+            newIndex >= 0
+        ) {
+
+            lyricsElement
+                .classList
+                .remove(
+                    "lyric-animation"
+                );
+
+
+            void lyricsElement
+                .offsetWidth;
+
+
+            lyricsElement.textContent =
+                lyrics[newIndex].text;
+
+
+            lyricsElement
+                .classList
+                .add(
+                    "lyric-animation"
+                );
+
+        }
+
+        else {
+
+            lyricsElement.textContent =
+                "";
+        }
+    }
+}
+
+
+/* =========================
+   AUDIO EVENTS
+========================= */
+
+song.addEventListener(
+    "timeupdate",
+    () => {
+
+        updateLyric();
+
+
+        if (
+            song.duration
+        ) {
+
+            const percent =
+                (
+                    song.currentTime /
+                    song.duration
+                ) * 100;
+
+
+            progressBar.style.width =
+                percent + "%";
+        }
+
+    }
+);
+
+
+/*
+   When user seeks through
+   the song, lyrics immediately
+   follow the new position.
+*/
+
+song.addEventListener(
+    "seeked",
+    updateLyric
+);
+
+
+/* =========================
+   HEARTS
+========================= */
+
+let heartsStarted = false;
+
+
+function createHearts() {
+
+    if (heartsStarted) {
+        return;
+    }
+
+    heartsStarted = true;
+
+
+    setInterval(() => {
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.className =
+            "heart";
+
+
+        heart.textContent =
+            Math.random() > .5
+            ? "❤️"
+            : "♡";
+
+
+        heart.style.left =
+            Math.random() * 100 +
+            "vw";
+
+
+        heart.style.fontSize =
+            (
+                12 +
+                Math.random() * 22
+            ) + "px";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        },4000);
+
+    },500);
+}
+
+
+/* =========================
+   BACK
+========================= */
 
 function goBack() {
 
-    let song = document.getElementById("song");
-
     song.pause();
+
     song.currentTime = 0;
 
-    document.getElementById("songScreen").style.display = "none";
-    document.getElementById("calculator").style.display = "block";
 
-    clearDisplay();
+    songScreen.classList.remove(
+        "song-active"
+    );
+
+
+    calculator.classList.remove(
+        "calculator-exit"
+    );
+
+
+    display.value = "";
+
+
+    currentLyric = -1;
+
+
+    lyricsElement.textContent =
+        "❤️";
 }
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key >= "0" &&
+            event.key <= "9"
+        ) {
+
+            add(event.key);
+        }
+
+
+        if (event.key === "*") {
+            add("×");
+        }
+
+
+        if (event.key === "/") {
+            add("÷");
+        }
+
+
+        if (event.key === "+") {
+            add("+");
+        }
+
+
+        if (event.key === "-") {
+            add("-");
+        }
+
+
+        if (
+            event.key === "Enter"
+        ) {
+
+            calculate();
+        }
+
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            clearDisplay();
+        }
+
+    }
+);
 
 </script>
 
